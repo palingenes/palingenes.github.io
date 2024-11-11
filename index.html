@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>exc</title>
+    <meta charset="utf-8">
+    <title>测试延迟Deeplink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
+
 <body>
-    <h1>exc的个人主页</h1>
-    <h1>Hello ~</h1>
+    <p>5e0a6a717a67084ca61d31517189fd30</p>
+    <a href="https://www.starnovel8.com/page/s1/dj1fqg5z/evzeu72x.html">evzeu72x</a> <br>
+    <a href="https://www.starnovel8.com/page/s1/dj1fqg5z/8hlcrwww.html">8hlcrwww</a> <br>
+    <a href="https://www.starnovel8.com/page/s1/dj1fqg5z/wu7veot3.html">wu7veot3</a> <br>
+    <a href="https://www.starnovel8.com/page/s1/dj1fqg5z/68ytclbb.html">68ytclbb</a> <br>
+    <a href="https://www.starnovel8.com/page/s1/dj1fqg5z/2m16r5ub.html">2m16r5ub</a> <br>
+    <br>
+    <a
+        href="com.story.xingyuedu://star/link?target=front_page&adp=facebook&adid=123&desc=%E6%B5%8B%E8%AF%95">deeplink点击</a>
+    <p></p>
+    <button id="btn">点我复制</button>
+
+    <script>
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.setAttribute('readonly', 'readonly');
+            input.setAttribute('value', '543532sdcs');
+            document.body.appendChild(input);
+            input.setSelectionRange(0, 9999);
+            input.select();
+            if (document.execCommand('copy')) {
+                document.execCommand('copy');
+                console.log('复制成功');
+                alert("复制成功")
+            }
+            document.body.removeChild(input);
+        })
+
+    </script>
 </body>
+
 </html>
